@@ -1,22 +1,24 @@
 {
   "name": "lrn-mcp-service",
   "version": "2.0.0",
-  "description": "MCP Service for LRN Dev Platform (forked from OA-Y)",
-  "main": "index.js",
+  "description": "MCP Service for LRN Dev Platform",
+  "main": "lrn-mcp-service.js",
+  "bin": {
+    "lrn-mcp-service": "./lrn-mcp-service.js"
+  },
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "build": "esbuild index.js --bundle --platform=node --outfile=lrn-mcp-service.js --format=esm"
   },
-  "bin": {
-    "lrn-mcp-service": "./index.js"
-  },
+  "files": [
+    "lrn-mcp-service.js"
+  ],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.15.1",
     "node-fetch": "^2.6.7"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "esbuild": "^0.19.8"
   },
   "keywords": [
     "mcp",

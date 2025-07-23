@@ -4,7 +4,23 @@ A minimal MCP service for managing courses via HTTP API. Forked for LRN Dev Plat
 
 ---
 
-## Quick Start
+## Quick Start (local)
+
+1. **Build the project into a single file:**
+   ```bash
+   npx esbuild index.js --bundle --platform=node --outfile=lrn-mcp-service.js --format=esm
+   ```
+2. **Run the service:**
+   ```bash
+   node lrn-mcp-service.js
+   ```
+3. **Set the environment variable:**
+   ```bash
+   export API_TOKEN=your_token
+   ```
+   (on Windows: `set API_TOKEN=your_token`)
+
+## Quick Start (development)
 
 1. Install dependencies:
    ```bash
@@ -31,7 +47,7 @@ You can integrate this service as an external MCP server in your platform or AI 
   "mcpServers": {
     "lrn-mcp-service": {
       "command": "node",
-      "args": ["/path/to/lrn-mcp-service/index.js"],
+      "args": ["/path/to/lrn-mcp-service/lrn-mcp-service.js"],
       "env": {
         "APP_ENV": "dev",
         "API_TOKEN": "your_token"
@@ -83,6 +99,27 @@ You can integrate this service as an external MCP server in your platform or AI 
     "duration": 60
   }
 }
+```
+
+---
+
+## Course and Lesson URL Format
+
+To get a direct link to a course or lesson on the OA-Y platform, use the following formats:
+
+- **Course:**
+  ```
+  https://lrn.oa-y.com/courses/<course._id>
+  ```
+- **Lesson:**
+  ```
+  https://lrn.oa-y.com/courses/<course._id>/modules/<module._id>/lessons/<lesson._id>
+  ```
+
+**Example:**
+
+```
+https://lrn.oa-y.com/courses/6880864e62db728ad9a3d28b/modules/6880864f62db728ad9a3d931/lessons/6880e57353812200b4b5c512
 ```
 
 ---
