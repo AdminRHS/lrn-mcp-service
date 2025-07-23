@@ -8,7 +8,11 @@ A minimal MCP service for managing courses via HTTP API. Forked for LRN Dev Plat
 
 1. **Build the project into a single file:**
    ```bash
-   npx esbuild index.js --bundle --platform=node --outfile=lrn-mcp-service.js --format=esm
+   npm run build
+   ```
+   or directly:
+   ```bash
+   npx esbuild index.js --bundle --platform=node --outfile=lrn-mcp-service.js --format=esm --external:node:*
    ```
 2. **Run the service:**
    ```bash

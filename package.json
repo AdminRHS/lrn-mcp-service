@@ -8,7 +8,7 @@
   },
   "type": "module",
   "scripts": {
-    "build": "esbuild index.js --bundle --platform=node --outfile=lrn-mcp-service.js --format=esm"
+    "build": "esbuild index.js --bundle --platform=node --outfile=lrn-mcp-service.js --format=esm --external:node:*"
   },
   "files": [
     "lrn-mcp-service.js"
